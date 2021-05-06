@@ -1,0 +1,13 @@
+h1{
+    font-size:32px;
+}
+h2{font-size:20px;}
+
+p{font-size:14px;}
+
+.osyare{
+    background-color:#F2F2E4;
+    border-left:solid 8px #e3e0d9;
+    border-bottom:2px solid rgb(0, 128, 43);
+    padding : 5px 5px;
+}
