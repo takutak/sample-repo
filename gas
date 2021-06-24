@@ -1,0 +1,13 @@
+function _1() {
+  const sheet = SpreadsheetApp.getActive();
+  const sheet1 = sheet.getSheetByName('予定表1');
+  const sheet2 = sheet.getSheetByname('予定表2');
+
+  //情報先格納
+  //実行時間短縮のため、配列で情報を格納する。
+  var info=sheet.getRange("｛セルの番地（始まり）｝:｛セルの番地（終わり)}").getValue();
+
+  //シート1に情報を書き込んでいく。
+  sheet1.getRange(位置).setValue(info[どれ])
+};
+
