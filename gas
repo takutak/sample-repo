@@ -1,13 +1,25 @@
-function _1() {
-  const sheet = SpreadsheetApp.getActive();
-  const sheet1 = sheet.getSheetByName('予定表1');
-  const sheet2 = sheet.getSheetByname('予定表2');
+function honnbann() {
+  //ここでシートのまとまりを取得。稼働中のものに対して実行されるので注意
+  var spreadsheet = SpreadsheetApp.getActive();
+  
+  //ページを取得しいく.以後も使うのでここが重要
+  const sheet = spreadsheet.getSheetByName("夏講習");
+  const sheet1 = spreadsheet.getSheetByName("報告書10");
+  const sheet2 = spreadsheet.getSheetByName("報告書20");
 
-  //情報先格納
-  //実行時間短縮のため、配列で情報を格納する。
-  var info=sheet.getRange("｛セルの番地（始まり）｝:｛セルの番地（終わり)}").getValue();
+  //ここまでの確認
+  //Logger.log(sheet2.getName()); →大丈夫だった。
 
-  //シート1に情報を書き込んでいく。
-  sheet1.getRange(位置).setValue(info[どれ])
+  //アクセス回数が多くなるので、データの取得は配列で実施
+  const data = sheet.getRange('E2');
+  console.log(data.getValue());
+  //ここは情報取得できるかお試し中
+
+
+  spreadsheet.setActiveSheet(spreadsheet.getSheetByName('報告書10'), true);
+  spreadsheet.getRange('B4').activate();
+  spreadsheet.getRange('\'夏講習\'!B2:K2').copyTo(spreadsheet.getActiveRange(), SpreadsheetApp.CopyPasteType.PASTE_NORMAL, false);
+  spreadsheet.getRange('B18:G18').activate();
+  spreadsheet.getActiveRangeList().setBackground('#f6b26b');
 };
 
