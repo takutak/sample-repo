@@ -1,0 +1,17 @@
+from collections import deque
+
+#create graph
+#|V| = n, start = s,edge = E
+
+seen = [False]*n
+Q = deque()
+Q.append(s)
+seen[s] = True
+
+#queが空になるまで探索
+while len(Q) > 0:
+    i = Q.popleft()
+    for j in E[i]:
+        if seen[j] ==False:
+            seen[j] = True
+            Q.append(j)
